@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>>
+<%@page import="java.sql.*,java.util.*"%>
+<%
+String firstname=request.getParameter("firstname");
+String lastname=request.getParameter("lastname");
+String email=request.getParameter("email");
+String contact=request.getParameter("contact");
+String address=request.getParameter("address");
+String additionalinfo=request.getParameter("additionalinfo");
+String location=request.getParameter("location");
+String flattype=request.getParameter("flattype");
+ 
+//String JdbcURL = "jdbc:mysql://localhost:3306/fms" + "autoReconnect=true&useSSL=false";
+//String Username = "root";
+//String password = "harish";
+Connection con = null;
+ 
+try {
+    Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fms", "root", "harish");
+Statement st=con.createStatement();
+st.executeUpdate("insert into customer(firstname,lastname,contact,email,address,location,flattype,additionalinfo)values('"+firstname+"','"+lastname+"','"+contact+"','"+email+"','"+address+"','"+location+"','"+flattype+"','"+additionalinfo+"')");
+response.sendRedirect("success.html");
+con.close();
+}
+catch(Exception e)
+{
+    out.println(e);
+}
+ 
+%>

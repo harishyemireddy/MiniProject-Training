@@ -1,0 +1,4 @@
+1. Submit Popup button
+2. email validation
+3. Location List
+4. Types of Flats List
