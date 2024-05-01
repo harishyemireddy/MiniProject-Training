@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Form Data</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+</head>
+<body>
+
+<section class="header" id="header">
+  <nav>
+    <a href="index.html"><img src="images/fms.png" alt="FMS Logo"></a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#typeofflat">Flats</a></li>
+        <li><a href="#location">Locations</a></li>
+        <li><a href="#currentprojects">Current Projects</a></li>
+        <li><a href="#contactformclass">Enquiry Box</a></li>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container2">
+    <h1>Form Data</h1>
+    <div id="formData"></div>
+  </div>
+</section>
+
+<script>
+  // Retrieve stored form data
+  const firstName = localStorage.getItem('firstName');
+  const lastName = localStorage.getItem('lastName');
+  const mobileNumber = localStorage.getItem('mobileNumber');
+  const emailAddress = localStorage.getItem('emailAddress');
+  const address = localStorage.getItem('address');
+  const locationData = localStorage.getItem('location'); // Change variable name to locationData
+  const flatType = localStorage.getItem('flatType');
+  const additionalInfo = localStorage.getItem('additionalInfo');
+
+  // Log the retrieved data
+  console.log(firstName, lastName, mobileNumber, emailAddress, address, locationData, flatType, additionalInfo);
+
+  // Display form data
+  const formDataContainer = document.getElementById('formData');
+  formDataContainer.innerHTML = `
+    <p><strong>First Name:</strong> ${firstName}</p>
+    <p><strong>Last Name:</strong> ${lastName}</p>
+    <p><strong>Mobile Number:</strong> ${mobileNumber}</p>
+    <p><strong>Email Address:</strong> ${emailAddress}</p>
+    <p><strong>Address:</strong> ${address}</p>
+    <p><strong>Location:</strong> ${locationData}</p> <!-- Change variable name to locationData -->
+    <p><strong>Type of Flat:</strong> ${flatType}</p>
+    <p><strong>Additional Info:</strong> ${additionalInfo}</p>
+  `;
+  var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+
+</body>
+</html>

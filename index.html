@@ -25,7 +25,7 @@
       </nav>
       <div class="text-box">
         <h1>Flat Management System</h1>
-        <p>This website will help customers to serach for flats according to their choices</p>
+        <p>This website will help customers to search for flats according to their choices</p>
         <a href="#typeofflat" class="hero-btn">Visit Us to know more</a>
       </div>
     </section>
@@ -154,63 +154,92 @@
     </section>
     <section class="contactformclass" id="contactformclass">
       <div class="container">
-            <div class="title">Enquiry Box</div>
-            <form class="" action="#">
-              <div class="user-details">
-                <div class="input-box">
-                  <span class="details">First Name</span>
-                  <input type="text" placeholder="Enter your First Name" required>
-                </div>
-                <div class="input-box">
-                  <span class="details">Last Name</span>
-                  <input type="text" placeholder="Enter your Last Name" required>
-                </div>
-                <div class="input-box">
-                  <span class="details">Mobile Number</span>
-                  <input type="text" placeholder="Enter your Mobile Number" maxlength="10" required>
-                </div>
-                <div class="input-box">
-                  <span class="details">Email ID</span>
-                  <input id="emailAddress" type="email" placeholder="Enter your Email ID" required>
-                </div>
-                <div class="input-box">
-                  <span class="details">Address</span>
-                  <input type="text" placeholder="Enter your Address" required>
-                </div>
-                <div class="input-box">
-                  <span class="details">Location</span>
-                  <input type="text" placeholder="Enter Location" list="defaultLocations" required>
-                  <datalist id="defaultLocations">
-                    <option value="Delhi"></option>
-                    <option value="Hyderabad"></option>
-                    <option value="Banglore"></option>
-                  </datalist>
-                </div>
-                <div class="input-box">
-                  <span class="details">Type of Flat</span>
-                  <input type="text" placeholder="Type of Flat" list="defaultFlattypes" required>
-                  <datalist id="defaultFlattypes">
-                    <option value="2BHK"></option>
-                    <option value="3BHK"></option>
-                    <option value="4BHK"></option>
-                  </datalist>
-                </div>
-                <div class="input-box">
-                  <span class="details">Additional Info</span>
-                  <input type="text" placeholder="Additional Info">
-                </div>
-              </div>
-              <div class="button">
-                <input type="submit" onClick="popup()" value="Submit">
-              </div>
-            </form>
+        <div class="title">Enquiry Box</div>
+        <form id="contactForm">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">First Name</span>
+              <input id="firstName" type="text" placeholder="Enter your First Name" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Last Name</span>
+              <input id="lastName" type="text" placeholder="Enter your Last Name" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Mobile Number</span>
+              <input id="mobileNumber" type="text" placeholder="Enter your Mobile Number" maxlength="10" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Email ID</span>
+              <input id="emailAddress" type="email" placeholder="Enter your Email ID" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Address</span>
+              <input id="address" type="text" placeholder="Enter your Address" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Location</span>
+              <input id="location" type="text" placeholder="Enter Location" list="defaultLocations" required>
+              <datalist id="defaultLocations">
+                <option value="Delhi"></option>
+                <option value="Hyderabad"></option>
+                <option value="Banglore"></option>
+              </datalist>
+            </div>
+            <div class="input-box">
+              <span class="details">Type of Flat</span>
+              <input id="flatType" type="text" placeholder="Type of Flat" list="defaultFlattypes" required>
+              <datalist id="defaultFlattypes">
+                <option value="2BHK"></option>
+                <option value="3BHK"></option>
+                <option value="4BHK"></option>
+              </datalist>
+            </div>
+            <div class="input-box">
+              <span class="details">Additional Info</span>
+              <input id="additionalInfo" type="text" placeholder="Additional Info">
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
       </div>
     </section>
-    <script type="text/javascript">
-    	var scroll = new SmoothScroll('a[href*="#"]');
-      function popup(){
-        alert("Details Submitted Successfully...");
-        }
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent default form submission
+    
+          // Get form values
+          const firstName = document.getElementById('firstName').value;
+          const lastName = document.getElementById('lastName').value;
+          const mobileNumber = document.getElementById('mobileNumber').value;
+          const emailAddress = document.getElementById('emailAddress').value;
+          const address = document.getElementById('address').value;
+          const location = document.getElementById('location').value;
+          const flatType = document.getElementById('flatType').value;
+          const additionalInfo = document.getElementById('additionalInfo').value;
+    
+          // Store form values in local storage
+          localStorage.setItem('firstName', firstName);
+          localStorage.setItem('lastName', lastName);
+          localStorage.setItem('mobileNumber', mobileNumber);
+          localStorage.setItem('emailAddress', emailAddress);
+          localStorage.setItem('address', address);
+          localStorage.setItem('location', location);
+          localStorage.setItem('flatType', flatType);
+          localStorage.setItem('additionalInfo', additionalInfo);
+    
+          // Log the stored data
+          console.log(localStorage);
+    
+          // Redirect to view_form_data.html
+          window.location.href = 'view_form_data.html';
+      });
+      var scroll = new SmoothScroll('a[href*="#"]');
+    function popup(){
+      alert("Details Submitted Successfully...");
+    }
     </script>
   </body>
 </html>

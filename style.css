@@ -403,3 +403,19 @@ form .button input{
 form .button input:hover{
   background: linear-gradient(-135deg,#22a7f0,#fff3f3);
 }
+.container2{
+  width: 100%;
+  color: #fff;
+  position: absolute;
+  text-align: left;
+}
+.container2 h1{
+  font-size: 50px;
+  text-align: center;
+}
+.container2 p{
+  margin: 10px 0 10px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
