@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flat Management System</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -179,7 +179,7 @@
             </div>
             <div class="input-box">
               <span class="details">Location</span>
-              <input id="location" type="text" placeholder="Enter Location" list="defaultLocations" required>
+              <input id="locationInput" type="text" placeholder="Enter Location" list="defaultLocations" required>
               <datalist id="defaultLocations">
                 <option value="Delhi"></option>
                 <option value="Hyderabad"></option>
@@ -216,7 +216,7 @@
           const mobileNumber = document.getElementById('mobileNumber').value;
           const emailAddress = document.getElementById('emailAddress').value;
           const address = document.getElementById('address').value;
-          const location = document.getElementById('location').value;
+          const location = document.getElementById('locationInput').value;
           const flatType = document.getElementById('flatType').value;
           const additionalInfo = document.getElementById('additionalInfo').value;
     
